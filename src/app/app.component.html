@@ -40,7 +40,7 @@
     <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr>
 </table>
 
-<table mat-table [dataSource]="dataSourceWithObjectColumn" class="mat-elevation-z8" matSort #empTbSortWithObject="matSort">
+<!-- <table mat-table [dataSource]="dataSourceWithObjectColumn" class="mat-elevation-z8" matSort #empTbSortWithObject="matSort">
     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumnsWithObject">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column }}</th>
         <ng-container *ngIf="column == 'project.name'">
@@ -53,7 +53,7 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumnsWithObject"></tr>
     <tr mat-row *matRowDef="let emprow; columns: displayedColumnsWithObject"></tr>
-</table>
+</table> -->
 
 <div>
 
