@@ -18,19 +18,19 @@
 
     <div style="padding: 20px; display: flex;">
         <p style="margin: 0 20px;">
-            {{isActive ? 'Please Disable' : 'Please Activate'}}
+            Show Table {{isActive ? 'Disable' : 'Activate'}}
         </p>
         <input type="checkbox" [(ngModel)]="isActive">
     </div>
 
     <div style="padding:0 25px; display: flex;">
         <button mat-raised-button [disabled]="isActive ? 'false' : 'true' " [color]="isActive ? 'primary' : '' ">
-            I am {{isActive ? 'Activate' : ' Disable'}}
+            {{isActive ? 'Activate' : ' Disable'}}
         </button>
     </div>
 </div>
 
-<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8" #empTbSort="matSort">
+<table *ngIf="isActive" mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8" #empTbSort="matSort">
     <ng-container [matColumnDef]="column" *ngFor="let column of
         displayedColumns">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column }}</th>

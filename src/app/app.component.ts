@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Employee } from './interface/employee';
+import { Friends } from './interface/friends';
 import { MatSort } from '@angular/material/sort';
 
 
-const EmpData: Employee[] = [
+const EmpData: Friends[] = [
   {
     id: 1,
-    'firstname': 'Mellie',
-    'lastname': 'Gabbott',
+    'firstname': 'fahimeh',
+    'lastname': 'ahmadi',
     'email': 'mgabbott0@indiatimes.com',
     'gender': 'Female',
     'department': 'Support',
@@ -17,10 +17,10 @@ const EmpData: Employee[] = [
   },
   {
     id: 2,
-    'firstname': 'Yehudi',
-    'lastname': 'Ainsby',
+    'firstname': 'morteza',
+    'lastname': 'nejat',
     'email': 'yainsby1@w3.org',
-    'gender': 'Female',
+    'gender': 'male',
     'department': 'Support',
     'jobtitle': 'Support Analyst'
   }
@@ -41,8 +41,8 @@ export class AppComponent implements OnInit {
       'id',
       'firstname',
       'lastname',
-      'email',
-      // 'gender',
+      //'email',
+      'gender',
       // 'jobtitle',
       // 'department'
     ];
