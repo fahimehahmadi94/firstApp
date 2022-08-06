@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Friends } from './interface/friends';
 import { MatSort } from '@angular/material/sort';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 const EmpData: Friends[] = [
   {
@@ -36,6 +36,11 @@ export class AppComponent implements OnInit {
   isActive = false;
 
 
+
+
+ 
+
+
   displayedColumns: string[] =
     [
       'id',
@@ -57,10 +62,11 @@ export class AppComponent implements OnInit {
   constructor() {
   }
 
-  ngAfterViewInit() {
-    this.empTbSort.disableClear = true;
-    this.dataSource.sort = this.empTbSort;
-  }
+  // ngAfterViewInit() {
+  //   this.empTbSort.disableClear = true;
+  //   this.dataSource.sort = this.empTbSort;
+  // }
 
   ngOnInit(): void { }
+
 }

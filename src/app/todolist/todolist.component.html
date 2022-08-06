@@ -1,0 +1,38 @@
+<section class="todoList">
+    <h3>{{getName()}} To Do List </h3>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="" type="text" [(ngModel)]="todoText">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addItem(todoText)">Add</button>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Task</th>
+                <th>DOne</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of getTodoitems(); let i= index">
+                <td>{{i + 1}}</td>
+                <td>{{item.action}}</td>
+                <td>
+                    <input type="checkbox" [(ngModel)]="item.done">
+                </td>
+                <td [ngSwitch]="item.done">
+                    <span *ngSwitchCase="true">Yes</span>
+                    <span *ngSwitchCase="false">No</span>
+                </td>
+                <td style="cursor: pointer;" (click)="removeTask(i)">delete</td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
