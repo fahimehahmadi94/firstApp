@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { Task } from '../interface/task';
 import { Task, TodoItem } from '../model/task';
+
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-todolist',
@@ -12,7 +13,14 @@ export class TodolistComponent implements OnInit {
   model = new Task();
   todoText = '';
 
-  constructor() { }
+  constructor(
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['en', 'fa', 'fr']);
+    // Set default language
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit(): void {
   }
@@ -37,5 +45,10 @@ export class TodolistComponent implements OnInit {
   removeTask(index: number) {
     this.model.items.splice(index, 1)
 
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 }

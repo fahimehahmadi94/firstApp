@@ -1,4 +1,42 @@
 <section class="todoList">
+    <h1>{{'title' | translate}}</h1>
+    <div style="display: flex;margin: 25px 0;">
+        <p style=" margin-right: 25px;">Change Language: </p>
+        <select #selLang (change)="translateLanguageTo(selLang.value)">
+            <option *ngFor="let language of translate.getLangs()"
+                [value]="language">
+                {{ language }}
+            </option>
+        </select>
+    </div>
+
+
+
+
+    <!-- <select #selLang (change)="translateLanguageTo(selLang.value)">
+        <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+      </select> -->
+    <!-- <h1>{{'TITLE' | translate}}</h1>
+    <ul>
+        <li>
+            <b>{{'USER_INFO.NAME' | translate}}</b> : Heidi Miller
+        </li>
+        <li>
+            <b>{{'USER_INFO.WORKING_PROFILE' | translate}}</b> : Proactive discrete moderator
+        </li>
+        <li>
+            <b>{{'USER_INFO.ADDRESS_DETAILS' | translate}}</b> : 05516 Kristina Heights
+        </li>
+        <li>
+            <b>{{'USER_INFO.PHONE_NUMBER' | translate}}</b> : 253.647.7397 x4073
+        </li>
+        <li>
+            <b>{{'USER_INFO.EMAIL_ADDRESS' | translate}}</b> : Heidi_Miller33@yahoo.com
+        </li>
+        <li>
+            <b>{{'USER_INFO.RELEVANT_EXPERIENCE' | translate}}</b> : 4.5 Years
+        </li>
+    </ul> -->
     <h3>{{getName()}} To Do List </h3>
     <div>
         <mat-form-field appearance="outline">
