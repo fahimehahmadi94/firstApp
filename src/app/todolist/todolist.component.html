@@ -10,31 +10,10 @@
         </select>
     </div>
 
-
-
-
-    <!-- <select #selLang (change)="translateLanguageTo(selLang.value)">
-        <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
-      </select> -->
-    <!-- <h1>{{'TITLE' | translate}}</h1>
+    <!-- 
     <ul>
         <li>
             <b>{{'USER_INFO.NAME' | translate}}</b> : Heidi Miller
-        </li>
-        <li>
-            <b>{{'USER_INFO.WORKING_PROFILE' | translate}}</b> : Proactive discrete moderator
-        </li>
-        <li>
-            <b>{{'USER_INFO.ADDRESS_DETAILS' | translate}}</b> : 05516 Kristina Heights
-        </li>
-        <li>
-            <b>{{'USER_INFO.PHONE_NUMBER' | translate}}</b> : 253.647.7397 x4073
-        </li>
-        <li>
-            <b>{{'USER_INFO.EMAIL_ADDRESS' | translate}}</b> : Heidi_Miller33@yahoo.com
-        </li>
-        <li>
-            <b>{{'USER_INFO.RELEVANT_EXPERIENCE' | translate}}</b> : 4.5 Years
         </li>
     </ul> -->
     <h3>{{getName()}} To Do List </h3>
@@ -58,8 +37,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of getTodoitems(); let i= index">
-                <td>{{i + 1}}</td>
+            <tr *ngFor="let item of getTodoitems(); let idx= index">
+                <td>{{idx + 1}}</td>
                 <td>{{item.action}}</td>
                 <td>
                     <input type="checkbox" [(ngModel)]="item.done">
@@ -68,7 +47,15 @@
                     <span *ngSwitchCase="true">Yes</span>
                     <span *ngSwitchCase="false">No</span>
                 </td>
-                <td style="cursor: pointer;" (click)="removeTask(i)">delete</td>
+                <td style="cursor: pointer;display: flex;">
+                    <p (click)="removeTask(idx)">
+                        <i class="material-icons">delete</i>
+                    </p>
+                    <p (click)="editTask(idx,item.action)">
+                        <i class="material-icons">edit</i>
+                    </p>
+                </td>
+
             </tr>
 
         </tbody>

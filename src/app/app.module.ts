@@ -20,6 +20,8 @@ import { LoginComponent } from './login/login.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { WeatherComponent } from './weather/weather.component';
+import { ApixuService } from './apixu.service';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -29,7 +31,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     LoginComponent,
-    TodolistComponent
+    TodolistComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
 
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [ApixuService],
   bootstrap: [AppComponent],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

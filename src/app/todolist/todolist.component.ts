@@ -47,6 +47,15 @@ export class TodolistComponent implements OnInit {
 
   }
 
+  editTask(index: number, task: string) {
+    this.todoText = task;
+    
+    //  this.model.items.push(new TodoItem(taskItem, false));
+
+    this.model.items[index];
+
+  }
+
   //Switch language
   translateLanguageTo(lang: string) {
     this.translate.use(lang);

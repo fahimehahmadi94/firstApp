@@ -5,8 +5,8 @@ export class Task {
     constructor() {
         this.user = 'Fahimeh';
         this.items = [
-            new TodoItem('Buy Showes', false),
-            new TodoItem('Do work', false),
+            // new TodoItem('Buy Showes', false),
+            // new TodoItem('Do work', false),
         ]
     }
 }
