@@ -8,24 +8,31 @@ import { Component, OnInit } from '@angular/core';
 export class CalculatorComponent implements OnInit {
 
   input: string = '';
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
   pressNum(num: string) {
-
-    this.input = num;
-
+    this.input = this.input + num;
   }
 
   pressOperator(op: string) {
+    if (op == '=') {
+      this.getAnswer();
+    }
+    else {
+      this.input = this.input + op
+    }
+  }
 
-    this.input = this.input + op
-   
-    
+  getAnswer() {
+    let formula = this.input;
 
+    this.input = eval(formula);
+    this.input = this.input;
+
+    console.log(`Formula: ${formula}`);
   }
 
 
@@ -33,13 +40,24 @@ export class CalculatorComponent implements OnInit {
 
 
 
+  // calcAnswer() {
+  // let formula = this.input;
 
+  // let lastKey = formula[formula.length - 1];
 
+  // if (lastKey === '.') {
+  //   formula = formula.substr(0, formula.length - 1);
+  // }
 
+  // lastKey = formula[formula.length - 1];
 
+  // if (lastKey === '/' || lastKey === '*' || lastKey === '-' || lastKey === '+' || lastKey === '.') {
+  //   formula = formula.substr(0, formula.length - 1);
+  // }
 
-
-
+  // console.log("Formula " + formula);
+  // this.result = eval(formula);
+  //}
   // input: string = '';
   // result: string = ' ';
   // pressNum(num: string) {
@@ -96,16 +114,6 @@ export class CalculatorComponent implements OnInit {
   // }
 
 
-  // clear() {
-  //   if (this.input != "") {
-  //     this.input = this.input.substr(0, this.input.length - 1)
-  //   }
-  // }
-
-  // allClear() {
-  //   this.result = '';
-  //   this.input = '';
-  // }
 
   // calcAnswer() {
   //   let formula = this.input;
@@ -130,6 +138,18 @@ export class CalculatorComponent implements OnInit {
   //   this.calcAnswer();
   //   this.input = this.result;
   //   if (this.input == "0") this.input = "";
+  // }
+
+
+  // clear() {
+  //   if (this.input != "") {
+  //     this.input = this.input.substr(0, this.input.length - 1)
+  //   }
+  // }
+
+  // allClear() {
+  //   this.result = '';
+  //   this.input = '';
   // }
 
 }
