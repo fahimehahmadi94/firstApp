@@ -22,6 +22,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 import { ApixuService } from './apixu.service';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -32,7 +33,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     AppComponent,
     LoginComponent,
     TodolistComponent,
-    WeatherComponent
+    WeatherComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

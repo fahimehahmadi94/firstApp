@@ -1,0 +1,78 @@
+<div class="container-fluid d-flex justify-content-center">
+
+    <div class="col-sm-3 mt-5 border d-flex justify-content-center align-items-center flex-column
+        p-2">
+        <div type="text" class="w-75 form-control">{{input}}</div>
+
+        <div class="w-100 d-flex justify-content-evenly align-items-center mt-2">
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('7')">
+                7
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('8')">
+                8
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('9')">
+                9
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressOperator('*')">
+                x
+            </button>
+        </div>
+
+
+        <div class="w-100 d-flex justify-content-evenly align-items-center mt-2">
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('4')">
+                4
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('5')">
+                5
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('6')">
+                6
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressOperator('-')">
+                -
+            </button>
+        </div>
+
+        <div class="w-100 d-flex justify-content-evenly align-items-center mt-2">
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('1')">
+                1
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('2')">
+                2
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('3')">
+                3
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressOperator('+')">
+                +
+            </button>
+        </div>
+
+        <div class="w-100 d-flex justify-content-evenly align-items-center mt-2">
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('0')">
+               0
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressNum('.')">
+                .
+            </button>
+
+
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="pressOperator('=')">
+                =
+            </button>
+        </div>
+    </div>
+</div>
